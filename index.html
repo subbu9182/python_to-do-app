@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script>
+        function toggleNextButton() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const nextButton = document.getElementById("next-button");
+            nextButton.disabled = !Array.from(checkboxes).some(cb => cb.checked);
+        }
+    </script>
+</head>
+<body>
+    <h1>To-Do Application</h1>
+    <form method="POST">
+        <label><input type="checkbox" name="sports" value="cricket" onchange="toggleNextButton()"> Cricket</label><br>
+        <label><input type="checkbox" name="sports" value="football" onchange="toggleNextButton()"> Football</label><br>
+        <label><input type="checkbox" name="sports" value="kabaddi" onchange="toggleNextButton()"> Kabaddi</label><br>
+        <button id="next-button" type="submit" disabled>Next</button>
+    </form>
+</body>
+</html>
+
