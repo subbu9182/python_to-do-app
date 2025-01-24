@@ -10,6 +10,8 @@ COPY requirements.txt /app
 COPY index.html /app
 COPY style.css /app
 
+RUN mkdir templates && mv index.html templates/
+
 # Install dependencies
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
